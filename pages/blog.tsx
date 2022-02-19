@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import NavBar from "@components/NavBar";
 import { LayoutDefault } from "../layout/LayoutDefault";
-const Home: NextPage = () => {
+const Blog: NextPage = () => {
   return (
     <div>
       <Head>
@@ -48,4 +48,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Blog;
