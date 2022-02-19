@@ -5,7 +5,8 @@
       "@components/*": ["./components/*"],
       "@services/*": ["./shared/services/*"],
       "@hooks/*": ["./shared/hooks/*"],
-      "@utils/*": ["./shared/utils/*"]
+      "@utils/*": ["./shared/utils/*"],
+      "@layouts/*": ["layouts/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import NavBar from "@components/NavBar";
-import { LayoutDefault } from "../layout/LayoutDefault";
+import { LayoutDefault } from "@layouts/LayoutDefault";
+import Hero from "@components/Hero";
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -12,37 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <LayoutDefault>
         <NavBar />
-        <p className="dark:text-[#F7F7F7]">
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quidem, nemo? A necessitatibus quae sapiente est! Accusamus cum non
-          quasi eos earum amet numquam, deserunt delectus impedit aperiam alias.
-          Sit, officia!
-        </p>
+        <Hero />
       </LayoutDefault>
     </div>
   );

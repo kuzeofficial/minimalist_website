@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import NavBar from "@components/NavBar";
-import { LayoutDefault } from "../layout/LayoutDefault";
+import { LayoutDefault } from "../layouts/LayoutDefault";
 const Blog: NextPage = () => {
   return (
     <div>
