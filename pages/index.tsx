@@ -4,6 +4,10 @@ import NavBar from "@components/NavBar";
 import { LayoutDefault } from "@layouts/LayoutDefault";
 import Hero from "@components/Hero";
 import Portfolio from "@components/Portofolio";
+import Footer from "@components/Footer";
+import Posts from "@components/Posts";
+
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +21,15 @@ const Home: NextPage = () => {
         <NavBar />
         <Hero />
         <Portfolio />
+        <Posts />
+        <Footer />
+        {/* {posts.map((post: any, index: any) => (
+          <Link href={`/${post.id}`} key={index}>
+            <a>
+              <h1>{post.properties.Name.title}</h1>
+            </a>
+          </Link>
+        ))} */}
       </LayoutDefault>
     </div>
   );

@@ -5,6 +5,14 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "http://cristianfonseca.com/:path*", // Proxy to Backend
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

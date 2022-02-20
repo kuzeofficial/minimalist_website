@@ -5,7 +5,7 @@ import CardPortfolio from "./CardPortfolio";
 
 export const Portfolio = () => {
   return (
-    <div>
+    <section>
       <h3 className="mt-12 mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
         Current Projects
       </h3>
@@ -32,12 +32,12 @@ export const Portfolio = () => {
       />
       <div className="flex justify-center">
         <Link href="/projects">
-          <a className="flex flex-row items-center mb-8 cursor-pointer dark:text-primary-40 text-primary-80 hover:text-primary-80/50 hover:transition-all hover:ease-in-out hover:duration-300 dark:hover:text-primary-40/50 ">
+          <a className="flex flex-row items-center cursor-pointer dark:text-primary-40 text-primary-80 hover:text-primary-80/50 hover:transition-all hover:ease-in-out hover:duration-300 dark:hover:text-primary-40/50 ">
             See all
             <FastForwardIcon className="w-4 h-4 ml-2" />
           </a>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
