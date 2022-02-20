@@ -37,6 +37,7 @@ export const NavBar = () => {
       </div>
       <div>
         <button
+          aria-label="Toggle dark mode"
           className="flex items-center justify-center px-1 py-1 bg-gray-200 border-2 rounded-lg hover:border-gray-400 dark:hover:border-gray-400 dark:text-gray-200 dark:border-transparent dark:bg-secondary-80"
           onClick={() => handleChangeTheme()}
         >
