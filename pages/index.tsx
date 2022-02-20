@@ -3,6 +3,7 @@ import Head from "next/head";
 import NavBar from "@components/NavBar";
 import { LayoutDefault } from "@layouts/LayoutDefault";
 import Hero from "@components/Hero";
+import Portfolio from "@components/Portofolio";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <LayoutDefault>
         <NavBar />
         <Hero />
+        <Portfolio />
       </LayoutDefault>
     </div>
   );

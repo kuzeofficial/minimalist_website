@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://cristianfonseca.com/sitemap.xml
+Sitemap: https://www.cristianfonseca.com/sitemap.xml

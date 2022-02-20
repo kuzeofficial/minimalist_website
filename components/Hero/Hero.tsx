@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ChartBarIcon } from "@heroicons/react/solid";
 import { ArrowRightIcon, DocumentIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 export const Hero = () => {
   return (
     <>
@@ -20,27 +21,30 @@ export const Hero = () => {
           </p>
         </div>
         <div className="flex items-start ">
-          <div className="flex flex-col w-[120px] h-[120px] justify-start transform transition-all bg-gradient-to-r p-1 from-support-20 to-support-50 rounded-full mb-8 sm:mb-0 mr-auto">
+          <div className="flex flex-col w-[100px] h-[100px] justify-start transform transition-all bg-gradient-to-r p-1 from-support-20 to-support-50 rounded-full mb-8 sm:mb-0 mr-auto">
             <Image
-              src="https://avatars.githubusercontent.com/u/65286318?v=4"
-              width={120}
-              height={120}
+              src="/images/65286318.webp"
+              width={100}
+              height={100}
+              quality={100}
               className="rounded-full"
               placeholder="blur"
-              blurDataURL="https://avatars.githubusercontent.com/u/65286318?v=4"
+              blurDataURL="/images/65286318.webp"
               alt="Avatar"
             />
           </div>
         </div>
       </div>
       <div className="flex mt-4">
-        <a className="flex flex-row items-center p-2 font-medium transition-colors border rounded-lg cursor-pointer text-md text-support-60 hover:bg-secondary-10 border-secondary-20 hover:text-support-80 dark:hover:bg-primary-90 dark:border-primary-80 dark:hover:border-primary-70 group">
-          <DocumentIcon className="w-6 h-6 mr-2" />
-          Download CV
-          <span className="inline-block align-middle transition-transform transform group-hover:translate-x-1">
-            <ArrowRightIcon className="w-6 h-4" />
-          </span>
-        </a>
+        <Link href="/documents/CV-Cristian.pdf">
+          <a className="flex flex-row items-center p-2 font-medium transition-colors border rounded-lg cursor-pointer text-md text-support-60 hover:bg-secondary-10 border-secondary-20 hover:text-support-80 dark:hover:bg-primary-90 dark:border-primary-80 dark:hover:border-primary-70 group">
+            <DocumentIcon className="w-6 h-6 mr-2" />
+            Download CV
+            <span className="inline-block align-middle transition-transform transform group-hover:translate-x-1">
+              <ArrowRightIcon className="w-6 h-4" />
+            </span>
+          </a>
+        </Link>
       </div>
     </>
   );
