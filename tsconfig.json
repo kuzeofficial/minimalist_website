@@ -6,7 +6,8 @@
       "@services/*": ["./shared/services/*"],
       "@hooks/*": ["./shared/hooks/*"],
       "@utils/*": ["./shared/utils/*"],
-      "@layouts/*": ["layouts/*"]
+      "@layouts/*": ["layouts/*"],
+      "@libs/*": ["./shared/lib/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -23,6 +24,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "shared/lib/notion.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "shared/lib/notion.js",
+    "pages/blog/[id].js"
+  ],
   "exclude": ["node_modules"]
 }

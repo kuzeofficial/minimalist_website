@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
   images: {
-    domains: ["avatars.githubusercontent.com"],
+    domains: [
+      "avatars.githubusercontent.com",
+      "images.unsplash.com",
+      "s3.us-west-2.amazonaws.com",
+    ],
   },
   async rewrites() {
     return [
