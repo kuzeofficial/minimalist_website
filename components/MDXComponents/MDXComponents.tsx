@@ -16,7 +16,7 @@ export const MDXComponents = {
     />
   ),
 
-  img: (props: Object) => <CustomImage {...props} className="rounded-md " />,
+  img: (props: Object) => <CustomImage {...props} />,
   hr: (props: Object) => (
     <hr
       className="w-full mb-8 border-gray-200 border-1 dark:border-primary-80/60"

@@ -45,7 +45,7 @@ export default function Post({ source, frontmatter }: PostProps) {
         <h1 className="mt-8 mb-4 text-3xl font-bold tracking-tight text-left text-black md:text-5xl dark:text-white">
           {frontmatter.title}
         </h1>
-        <div className="max-w-[640px] flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+        <div className="max-w-[640px] flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center mb-[16px]">
           <div className="flex items-center">
             <Image
               src="/images/65286318.webp"

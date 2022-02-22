@@ -15,7 +15,6 @@ interface BlogProps {
   ];
 }
 export const Posts = ({ posts }: BlogProps) => {
-  console.log(posts);
   return (
     <section>
       <h3 className="mt-12 mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
