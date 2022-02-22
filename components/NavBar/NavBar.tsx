@@ -25,26 +25,26 @@ export const NavBar = () => {
         <NavBarElement
           route={route}
           destination="/"
-          icon={<HomeIcon className="w-6 h-6 mr-2" />}
+          icon={<HomeIcon className="w-5 h-5 mr-2" />}
           text="Home"
         />
         <NavBarElement
           route={route}
           destination="/blog"
-          icon={<NewspaperIcon className="w-6 h-6 mr-2" />}
+          icon={<NewspaperIcon className="w-5 h-5 mr-2" />}
           text="Blog"
         />
       </div>
       <div>
         <button
           aria-label="Toggle dark mode"
-          className="flex items-center justify-center px-1 py-1 bg-gray-200 border-2 rounded-lg hover:border-gray-400 dark:hover:border-gray-400 dark:text-gray-200 dark:border-transparent dark:bg-secondary-80"
+          className="flex items-center justify-center px-1 py-1 bg-gray-200 border-2 rounded-lg w-9 h-9 hover:border-gray-400 dark:hover:border-gray-400 dark:text-gray-200 dark:border-transparent dark:bg-secondary-80"
           onClick={() => handleChangeTheme()}
         >
           {mode ? (
-            <SunIcon className="w-6 h-6 transition duration-300 ease-out hover:scale-125" />
+            <SunIcon className="w-5 h-5 transition duration-300 ease-out hover:scale-125" />
           ) : (
-            <MoonIcon className="w-6 h-6 transition duration-300 ease-out hover:scale-125" />
+            <MoonIcon className="w-5 h-5 transition duration-300 ease-out hover:scale-125" />
           )}
         </button>
       </div>

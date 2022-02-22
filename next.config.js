@@ -7,6 +7,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "images.unsplash.com",
       "s3.us-west-2.amazonaws.com",
+      "cristianfonseca.com",
     ],
   },
   async rewrites() {
