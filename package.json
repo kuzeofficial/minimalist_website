@@ -14,7 +14,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mapbox/rehype-highlight-code-block": "^1.0.0",
     "dayjs": "^1.10.7",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
@@ -24,7 +23,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "reading-time": "^1.5.0",
-    "rehype-highlight": "^5.0.2",
     "remark-code-titles": "^0.1.2",
     "sharp": "^0.30.1"
   },
