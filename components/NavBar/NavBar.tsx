@@ -20,7 +20,7 @@ export const NavBar = () => {
     localStorage.theme === "dark" ? setMode(true) : setMode(false);
   }, []);
   return (
-    <nav className="sticky z-50 flex flex-row justify-between items-center sm:w-[640px] w-full h-4 py-[1.7rem] px-4 mb-4 bg-opacity-100 shadow-lg dark:bg-primary-90/95 dark:text-gray-200 bg-secondary-10/95 backdrop-filter backdrop-blur-sm backdrop-brightness-150 top-3 rounded-2xl ease-in-out duration-300 transition-all">
+    <nav className="sticky  z-50 flex flex-row justify-between items-center sm:w-[640px] w-full h-4 py-[1.7rem] px-4 mb-4 bg-opacity-100 shadow-lg dark:bg-primary-90/95 dark:text-gray-200 bg-secondary-10/95 backdrop-filter backdrop-blur-sm backdrop-brightness-150 top-3 rounded-2xl ease-in-out duration-300 transition-all">
       <div className="flex flex-row">
         <NavBarElement
           route={route}

@@ -5,6 +5,7 @@ import { getFiles, getFileBySlug } from "shared/lib/mdx";
 import Image from "next/image";
 import { LayoutDefault } from "@layouts/LayoutDefault";
 import NavBar from "@components/NavBar";
+import Footer from "@components/Footer";
 type FrontMatterProps = {
   title: string;
   date: string;
@@ -42,27 +43,30 @@ export default function Post({ source, frontmatter }: PostProps) {
       </Head>
       <LayoutDefault>
         <NavBar />
-        <h1 className="mt-8 mb-4 text-3xl font-bold tracking-tight text-left text-black md:text-5xl dark:text-white">
-          {frontmatter.title}
-        </h1>
-        <div className="max-w-[640px] flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center mb-[16px]">
-          <div className="flex items-center">
-            <Image
-              src="/images/65286318.webp"
-              height="24px"
-              width="24px"
-              className="rounded-full "
-              alt={frontmatter.author}
-            />
-            <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {frontmatter.author} / {frontmatter.date}
+        <section className="sm:max-w-[640px] max-w-xs mb-20">
+          <h1 className="mt-8 mb-4 text-3xl font-bold tracking-tight text-left text-black md:text-5xl dark:text-white">
+            {frontmatter.title}
+          </h1>
+          <div className="max-w-[640px] flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center mb-[16px]">
+            <div className="flex items-center">
+              <Image
+                src="/images/65286318.webp"
+                height="24px"
+                width="24px"
+                className="rounded-full "
+                alt={frontmatter.author}
+              />
+              <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                {frontmatter.author} / {frontmatter.date}
+              </p>
+            </div>
+            <p className="mt-2 text-sm text-support-60 dark:text-support-40 min-w-32 md:mt-0">
+              {frontmatter.readingTime.text}
             </p>
           </div>
-          <p className="mt-2 text-sm text-support-60 dark:text-support-40 min-w-32 md:mt-0">
-            {frontmatter.readingTime.text}
-          </p>
-        </div>
-        <MDXRemote {...source} components={MDXComponents} />
+          <MDXRemote {...source} components={MDXComponents} />
+        </section>
+        <Footer />
       </LayoutDefault>
     </>
   );

@@ -16,6 +16,7 @@ interface BlogProps {
       site: string;
       tags: [string];
       slug: string;
+      description: string;
     }
   ];
 }
@@ -92,7 +93,7 @@ export default function Blog({ posts }: BlogProps) {
             />
           </svg>
         </div>
-        <div className="flex flex-wrap overflow-hidden">
+        <div className="grid grid-cols-1 justify-center max-w-[640px] w-full">
           {!searchValue &&
             currentPosts &&
             currentPosts.map((post: any) => {
@@ -101,7 +102,7 @@ export default function Blog({ posts }: BlogProps) {
                   <PostCard
                     title={post.title}
                     slug={post.slug}
-                    description="HOla"
+                    description={post.description}
                     tags={post.tags}
                     date={post.date}
                   />
@@ -120,7 +121,7 @@ export default function Blog({ posts }: BlogProps) {
                   title={post.title}
                   slug={post.slug}
                   date={post.date}
-                  description="HOla"
+                  description={post.description}
                   tags={post.tags}
                 />
               </div>

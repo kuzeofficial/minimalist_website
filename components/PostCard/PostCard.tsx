@@ -16,9 +16,9 @@ export const PostCard = ({
   tags,
 }: BlogProps) => {
   return (
-    <div>
+    <div className="w-full max-w-[640px]">
       <Link href={`/blog/${slug}`} passHref>
-        <div className="w-full px-2 py-2  rounded-lg cursor-pointer dark:hover:bg-primary-90 hover:bg-primary-10 transition-all  mb-[2px]">
+        <div className="w-full px-2 py-2 sm:max-w-[640px] rounded-lg cursor-pointer dark:hover:bg-primary-90 hover:bg-primary-10 transition-all  mb-[2px]">
           <div className="w-full">
             <div className="w-[303px] mb-1">
               {tags &&

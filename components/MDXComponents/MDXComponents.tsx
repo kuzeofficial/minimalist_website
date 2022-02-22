@@ -32,11 +32,13 @@ export const MDXComponents = {
   ),
   blockquote: (props: Object) => (
     <blockquote
-      className="w-full pl-4 mt-4 mb-4 border-l-4 border-support-40"
+      className="w-full pl-4 mt-4 mb-4 border-l-4 border-support-40 dark:text-primary-20 "
       {...props}
     />
   ),
-  ul: (props: Object) => <ul className="pl-4 mt-4 list-disc" {...props} />,
+  ul: (props: Object) => (
+    <ul className="pl-4 mt-4 list-disc dark:text-primary-20" {...props} />
+  ),
   p: (props: Object) => (
     <p className="leading-loose dark:text-primary-30" {...props} />
   ),
