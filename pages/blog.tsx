@@ -133,7 +133,7 @@ export default function Blog({ posts }: BlogProps) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const unorderedPosts = await getAllFilesFrontMatter("posts");
   const posts = unorderedPosts.sort(orderByDate);
   return {

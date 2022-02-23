@@ -48,7 +48,7 @@ const Home = ({ posts }: BlogProps) => {
 };
 
 export default Home;
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const unorderedPosts = await getAllFilesFrontMatter("posts");
   const postss = unorderedPosts.sort(orderByDate);
   const posts = postss.slice(0, 3);

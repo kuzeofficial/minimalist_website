@@ -28,8 +28,8 @@ export const Hero = () => {
           <div className="flex flex-col w-[100px] h-[100px] justify-start transform transition-all bg-gradient-to-r p-1 from-support-20 to-support-50 rounded-full mb-8 sm:mb-0 mr-auto">
             <Image
               src="/images/65286318.webp"
-              width={100}
-              height={100}
+              width="92px"
+              height="92px"
               quality={100}
               className="rounded-full"
               placeholder="blur"
