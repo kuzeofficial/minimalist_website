@@ -1,4 +1,5 @@
 {
+  "files": ["@types/block-content-to-react.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
