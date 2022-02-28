@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "../styles/prism.css";
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import useDarkMode from "@hooks/useDarkMode";

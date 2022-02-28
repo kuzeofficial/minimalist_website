@@ -6,18 +6,20 @@ import Hero from "@components/Hero";
 import Portfolio from "@components/Portofolio";
 import Footer from "@components/Footer";
 import Posts from "@components/Posts";
-import { getAllFilesFrontMatter } from "shared/lib/mdx";
 import { orderByDate } from "shared/lib/order-by-date";
+import { sanityClient } from "../sanity";
 interface BlogProps {
   posts: [
     {
       title: string;
-      date: string;
+      publishedAt: string;
       author: string;
       preview: string;
       site: string;
       tags: [string];
-      slug: string;
+      slug: {
+        current: string;
+      };
     }
   ];
 }
@@ -35,25 +37,32 @@ const Home = ({ posts }: BlogProps) => {
         <Portfolio />
         <Posts posts={posts} />
         <Footer />
-        {/* {posts.map((post: any, index: any) => (
-          <Link href={`/${post.id}`} key={index}>
-            <a>
-              <h1>{post.properties.Name.title}</h1>
-            </a>
-          </Link>
-        ))} */}
       </LayoutDefault>
     </div>
   );
 };
 
 export default Home;
-export async function getServerSideProps() {
-  const unorderedPosts = await getAllFilesFrontMatter("posts");
+export const getServerSideProps = async () => {
+  const query = `*[_type == "post"]{
+    _id,
+    title,
+    categories,
+    author-> {
+     name,
+     image
+   },
+   description,
+   mainImage,
+   publishedAt,
+   slug
+  }`;
+  const unorderedPosts = await sanityClient.fetch(query);
   const postss = unorderedPosts.sort(orderByDate);
   const posts = postss.slice(0, 3);
-
   return {
-    props: { posts },
+    props: {
+      posts: posts,
+    },
   };
-}
+};

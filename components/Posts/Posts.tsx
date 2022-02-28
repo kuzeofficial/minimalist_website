@@ -5,12 +5,14 @@ interface BlogProps {
   posts: [
     {
       title: string;
-      date: string;
+      publishedAt: string;
       author: string;
       preview: string;
       site: string;
       tags: [string];
-      slug: string;
+      slug: {
+        current: string;
+      };
     }
   ];
 }
@@ -22,7 +24,7 @@ export const Posts = ({ posts }: BlogProps) => {
       </h3>
       <div className="flex flex-col gap-6 mb-10 md:flex-row">
         {posts.map((post) => {
-          return <LatestPostCard post={post} key={post.slug} />;
+          return <LatestPostCard post={post} key={post.slug.current} />;
         })}
       </div>
       <div className="flex justify-center mb-20">

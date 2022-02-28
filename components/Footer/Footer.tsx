@@ -58,14 +58,14 @@ export const Footer = () => {
             link="/snippets"
           />
           <FooterElement
-            icon={<NewspaperIcon className="w-4 h-4 mr-1" />}
-            text="Blog"
-            link="/blog"
-          />
-          <FooterElement
             icon={<AtSymbolIcon className="w-4 h-4 mr-1" />}
             text="Contact"
             link="/contact"
+          />
+          <FooterElement
+            icon={<NewspaperIcon className="w-4 h-4 mr-1" />}
+            text="Blog"
+            link="/blog"
           />
         </div>
       </div>

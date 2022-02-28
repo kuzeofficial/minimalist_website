@@ -8,18 +8,20 @@ import Link from "next/link";
 interface PostProp {
   post: {
     title: string;
-    date: string;
+    publishedAt: string;
     author: string;
     preview: string;
     site: string;
     tags: [string];
-    slug: string;
+    slug: {
+      current: string;
+    };
   };
 }
 
 export const LatestPostCard = ({ post }: PostProp) => {
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={`/blog/${post.slug.current}`}>
       <a
         className={`transform hover:scale-[1.01] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-support-30  to-[#818CF8]`}
       >
@@ -32,7 +34,9 @@ export const LatestPostCard = ({ post }: PostProp) => {
           <div className="flex flex-row justify-between">
             <div className="flex w-[110px] items-center text-xs text-gray-800 dark:text-gray-200 max-w-[110px]">
               <CalendarIcon className="w-4 h-4" />
-              <span className="ml-1 align-baseline capsize">{post.date}</span>
+              <span className="ml-1 align-baseline capsize">
+                {new Date(post.publishedAt).toLocaleDateString()}
+              </span>
             </div>
             <div className="flex">
               <BadgeCheckIcon className="w-4 h-4 text-green-600" />

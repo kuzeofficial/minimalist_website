@@ -1,67 +1,22 @@
 import React, { useRef, useEffect, useState } from "react";
-
-import { orderByDate } from "shared/lib/order-by-date";
-import { getAllFilesFrontMatter } from "shared/lib/mdx";
-import { usePagination } from "shared/lib/use-pagination";
-import { LayoutDefault } from "../layouts/LayoutDefault";
 import NavBar from "@components/NavBar";
+import { sanityClient } from "../sanity";
 import { PostCard } from "@components/PostCard/PostCard";
-interface BlogProps {
-  posts: [
-    {
-      title: string;
-      date: string;
-      author: string;
-      preview: string;
-      site: string;
-      tags: [string];
-      slug: string;
-      description: string;
-    }
-  ];
+import { Post } from "../typings";
+import { LayoutDefault } from "@layouts/LayoutDefault";
+import { orderByDate } from "shared/lib/order-by-date";
+
+interface Props {
+  posts: [Post];
 }
 
-export default function Blog({ posts }: BlogProps) {
-  const { next, currentPage, currentData, maxPage } = usePagination(posts, 20);
-  const [element, setElement] = useState<HTMLDivElement | null>(null) || [null];
+export default function Blog({ posts }: Props) {
   const [searchValue, setSearchValue] = useState("");
   const filteredBlogPosts = posts.filter((post: any) =>
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
-  const observer = useRef<IntersectionObserver>();
-  const prevY = useRef(0);
 
-  const currentPosts = currentData();
-
-  useEffect(() => {
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        const firstEntry = entries[0];
-        const y = firstEntry.boundingClientRect.y;
-
-        if (prevY.current > y) {
-          next();
-        }
-        prevY.current = y;
-      },
-      { threshold: 0.5 }
-    );
-  }, [next]);
-
-  useEffect(() => {
-    const currentElement: React.ReactNode = element;
-    const currentObserver: any = observer.current;
-
-    if (currentElement) {
-      currentObserver.observe(currentElement);
-    }
-
-    return () => {
-      if (currentElement) {
-        currentObserver.unobserve(currentElement);
-      }
-    };
-  }, [element]);
+  const currentPosts = posts;
 
   return (
     <>
@@ -96,15 +51,15 @@ export default function Blog({ posts }: BlogProps) {
         <div className="grid grid-cols-1 justify-center max-w-[640px] w-full">
           {!searchValue &&
             currentPosts &&
-            currentPosts.map((post: any) => {
+            currentPosts.map((post) => {
               return (
-                <div key={post.slug}>
+                <div key={post.slug.current}>
                   <PostCard
                     title={post.title}
-                    slug={post.slug}
+                    slug={post.slug.current}
                     description={post.description}
-                    tags={post.tags}
-                    date={post.date}
+                    // categories={post.categories}
+                    date={post._createdAt}
                   />
                 </div>
               );
@@ -116,27 +71,42 @@ export default function Blog({ posts }: BlogProps) {
           )}
           {searchValue &&
             filteredBlogPosts.map((post) => (
-              <div key={post.slug}>
+              <div key={post.slug.current}>
                 <PostCard
                   title={post.title}
-                  slug={post.slug}
-                  date={post.date}
+                  slug={post.slug.current}
+                  date={post._createdAt}
                   description={post.description}
-                  tags={post.tags}
+                  // tags={[]}
                 />
               </div>
             ))}
         </div>
-        {currentPage !== maxPage && <h1 ref={setElement}>Cargando...</h1>}
       </LayoutDefault>
     </>
   );
 }
 
-export async function getServerSideProps() {
-  const unorderedPosts = await getAllFilesFrontMatter("posts");
-  const posts = unorderedPosts.sort(orderByDate);
+export const getServerSideProps = async () => {
+  const query = `*[_type == "post"]{
+    _id,
+    title,
+    categories,
+    author-> {
+     name,
+     image
+   },
+   description,
+   mainImage,
+   publishedAt,
+   slug
+  }`;
+  const unorderedPosts = await sanityClient.fetch(query);
+  const postss = unorderedPosts.sort(orderByDate);
+  const posts = postss.slice(0, 3);
   return {
-    props: { posts },
+    props: {
+      posts,
+    },
   };
-}
+};

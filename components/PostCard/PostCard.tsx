@@ -6,22 +6,22 @@ interface BlogProps {
   slug: string;
   date: string;
   description: string;
-  tags: string[];
+  // tags: string[];
 }
 export const PostCard = ({
   title,
   slug,
   description,
   date,
-  tags,
-}: BlogProps) => {
+}: // tags,
+BlogProps) => {
   return (
     <div className="w-full max-w-[640px]">
       <Link href={`/blog/${slug}`} passHref>
         <div className="w-full px-2 py-2 sm:max-w-[640px] rounded-lg cursor-pointer dark:hover:bg-primary-90 hover:bg-primary-10 transition-all  mb-[2px]">
           <div className="w-full">
             <div className="w-[303px] mb-1">
-              {tags &&
+              {/* {tags &&
                 tags.map((tag: any) => {
                   return (
                     <a
@@ -31,7 +31,7 @@ export const PostCard = ({
                       {tag}
                     </a>
                   );
-                })}
+                })} */}
             </div>
             <div className="flex flex-col justify-between md:flex-row">
               <h4 className="w-full sm:w-[458px] mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
