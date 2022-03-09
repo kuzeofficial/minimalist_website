@@ -8,6 +8,7 @@ import Footer from "@components/Footer";
 import Posts from "@components/Posts";
 import { orderByDate } from "shared/lib/order-by-date";
 import { sanityClient } from "../sanity";
+import SEO from "@components/SEO/SEO";
 interface BlogProps {
   posts: [
     {
@@ -26,11 +27,32 @@ interface BlogProps {
 const Home = ({ posts }: BlogProps) => {
   return (
     <div>
-      <Head>
-        <title>Next.js App</title>
-        <meta name="description" content="A new Next.js application" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title="Cristian Fonseca | Web Developer 🚀 🧑‍💻"
+        description="Building projects from zero to faster web, with frameworks like serverless, React / Next.js."
+        canonical="https://cristianfonseca.com"
+        openGraph={{
+          url: "https://cristianfonseca.com",
+          title: "Cristian Fonseca | Web Developer 🚀 🧑‍💻",
+          description:
+            "Building projects from zero to faster web, with frameworks like serverless, React / Next.js.",
+          images: [
+            {
+              url: "https://cristianfonseca.com/images/HOME-SEO.png",
+              width: 1542,
+              height: 640,
+              alt: "Cristian Fonseca | Web Developer 🚀 🧑‍💻 Personal Website",
+              type: "image/png",
+            },
+          ],
+          site_name: "Cristian Fonseca | Web Developer 🚀 🧑‍💻",
+        }}
+        twitter={{
+          handle: "@cristian_devk",
+          site: "@cristian_devk",
+          cardType: "summary_large_image",
+        }}
+      />
       <LayoutDefault>
         <NavBar />
         <Hero />

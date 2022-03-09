@@ -5,7 +5,7 @@ import { PostCard } from "@components/PostCard/PostCard";
 import { Post } from "../typings";
 import { LayoutDefault } from "@layouts/LayoutDefault";
 import { orderByDate } from "shared/lib/order-by-date";
-
+import SEO from "@components/SEO/SEO";
 interface Props {
   posts: [Post];
 }
@@ -20,6 +20,32 @@ export default function Blog({ posts }: Props) {
 
   return (
     <>
+      <SEO
+        title="Cristian Fonseca | Blog 📝"
+        description="Post about programming from Docker, Next, React and everything about web development"
+        canonical="https://cristianfonseca.com/blog"
+        openGraph={{
+          url: "https://cristianfonseca.com/blog",
+          title: "Cristian Fonseca | Blog 📝",
+          description:
+            "Post about programming from Docker, Next, React and everything about web development",
+          images: [
+            {
+              url: "https://cristianfonseca.com/images/BLOG-SEO.png",
+              width: 1542,
+              height: 640,
+              alt: "Cristian Fonseca | Blog 📝",
+              type: "image/png",
+            },
+          ],
+          site_name: "Cristian Fonseca | Blog 📝",
+        }}
+        twitter={{
+          handle: "@cristian_devk",
+          site: "@cristian_devk",
+          cardType: "summary_large_image",
+        }}
+      />
       <LayoutDefault>
         <NavBar />
         <h3 className="px-2 mt-12 mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
